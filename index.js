@@ -4,7 +4,7 @@ class Formatter {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
-  static stringSanitize(string) {
+  static sanitize(string) {
     return string.replace(/[^a-z0-9A-Z-' ]/g, "");
   }
 
@@ -13,7 +13,7 @@ class Formatter {
     let letters = words[0].split("");
     let firstCaps = letters[0].toUpperCase();
     let wordRemainderArray = letters.slice(1);
-    let wordRemainder = wordRemainderArray.reduce((a, b) => a + b);
+    let wordRemainder = wordRemainderArray.reduce((a,b,) => a + b,"");
     let firstWord = firstCaps + wordRemainder;
     let otherWords = [];
     //loop through each word
@@ -37,14 +37,14 @@ class Formatter {
         letters = words[s].split("");
         firstCaps = letters[0].toUpperCase();
         wordRemainderArray = letters.slice(1);
-        wordRemainder = wordRemainderArray.reduce((a, b) => a + b);
+        wordRemainder = wordRemainderArray.reduce((a, b) => a + b,"");
         let otherWord = firstCaps + wordRemainder;
         otherWords.push(` ${otherWord}`);
       }
       //otherwise capitilize the first letter
     }
     otherWords.unshift(firstWord);
-    let titleizedSentence = otherWords.reduce((a, b) => a + b);
+    let titleizedSentence = otherWords.reduce((a, b) => a + b,"");
     return titleizedSentence
   }
 }
