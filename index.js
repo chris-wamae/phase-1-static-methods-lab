@@ -52,3 +52,5 @@ class Formatter {
     return titleizedSentence
   }
 }
+
+//completed assigment
